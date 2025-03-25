@@ -25,11 +25,10 @@ import Container from "../shared/Container.astro";
 
 <section id="projects" class="relative py-24">
   <!-- Fondo de manchas de color sin el efecto borroso -->
-  <div class="absolute inset-0 z-0">
-    <div class="absolute top-0 left-1/3 w-[400px] h-[400px] bg-gradient-to-br from-green-400 to-blue-500 opacity-40"></div>
-    <div class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-br from-purple-400 to-pink-500 opacity-30"></div>
-    <div class="absolute top-1/2 right-0 w-[300px] h-[300px] bg-gradient-to-br from-yellow-400 to-orange-500 opacity-40"></div>
-  </div>
+<!-- FONDOS CON BLUR Y DEGRADADO -->
+  <div class="absolute top-16 left-5 w-72 h-72 rounded-full bg-indigo-500 blur-3xl opacity-60 -rotate-[55deg] skew-y-12 "></div>
+  <div class="absolute bottom-10 right-5 w-72 h-72 rounded-full bg-green-500 blur-3xl opacity-60 rotate-[100deg] skew-x-12 "></div>
+  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[500px] h-[500px] bg-gradient-to-br from-green-400 to-blue-500 blur-[150px] opacity-30 z-0"></div>
 
   <Container className="relative z-10">
     <h2 class="text-3xl lg:text-4xl font-bold text-heading-1 text-center mb-10">
@@ -38,7 +37,8 @@ import Container from "../shared/Container.astro";
 
     <div class="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {projects.map(project => (
-        <div class="bg-box-bg border border-box-border rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center transform transition-transform hover:scale-105 hover:-translate-y-2">
+        <div class="bg-box-bg border border-box-border rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 
+        flex flex-col items-center text-center transform transition-transform hover:scale-105 hover:-translate-y-2 shadow-lg hover:shadow-primary transition-shadow duration-300 space-y-6">
           
           <!-- Laptop mockup -->
           <div class="relative w-full">

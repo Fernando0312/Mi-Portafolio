@@ -6,10 +6,7 @@ import Title from "../shared/Title.astro";
 
 <section id="Contact" class="py-24 relative flex justify-center items-center">
     <!-- Fondo brillante animado centrado -->
-    <div
-        class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[500px] h-[500px] bg-gradient-to-br from-green-400 to-blue-500 blur-[150px] opacity-30 z-0"
-    >
-    </div>
+    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[500px] h-[500px] bg-gradient-to-br from-green-400 to-blue-500 blur-[150px] opacity-30 z-0"></div>
 
     <Container
         className="relative z-10 flex flex-col items-center gap-16 text-center"
@@ -28,7 +25,7 @@ import Title from "../shared/Title.astro";
                     target="_blank"
                     class="transition-transform hover:-translate-y-1"
                 >
-                    <img src="/public/logos/github (2).png" alt="GitHub" class="w-8 h-8" />
+                    <img src="/public/logos/lgit.png" alt="GitHub" class="w-12 h-12" />
                 </a>
                 <a
                     href="https://www.linkedin.com/in/fernando-urroz-orozco-69424731a/"
@@ -36,9 +33,9 @@ import Title from "../shared/Title.astro";
                     class="transition-transform hover:-translate-y-1"
                 >
                     <img
-                        src="/public/logos/linkedin.png"
+                        src="/public/logos/logolinkedin.png"
                         alt="LinkedIn"
-                        class="w-8 h-8"
+                        class="w-12 h-12"
                     />
                 </a>
             </div>
@@ -48,18 +45,18 @@ import Title from "../shared/Title.astro";
                 class="mt-10 bg-box-bg p-6 rounded-xl border border-gray-700 shadow-lg hover:shadow-primary transition-shadow duration-300 space-y-6"
             >
                 <div>
-                    <label for="name" class="block mb-2 text-sm font-medium"
+                    <label for="name" class="block mb-2 text-sm font-medium text-black dark:text-white"
                         >Name</label
                     >
                     <input
                         type="text"
                         id="name"
-                        class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary"
+                        class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary "
                         placeholder="Your name"
                     />
                 </div>
                 <div>
-                    <label for="email" class="block mb-2 text-sm font-medium"
+                    <label for="email" class="block mb-2 text-sm font-medium text-black dark:text-white"
                         >Email</label
                     >
                     <input
@@ -70,7 +67,7 @@ import Title from "../shared/Title.astro";
                     />
                 </div>
                 <div>
-                    <label for="message" class="block mb-2 text-sm font-medium"
+                    <label for="message" class="block mb-2 text-sm font-medium text-black dark:text-white"
                         >Message</label
                     >
                     <textarea
@@ -139,7 +136,7 @@ import Title from "../shared/Title.astro";
 
         <!-- Imagen -->
         <div class="flex-1 relative max-w-md">
-            <div class="relative w-full h-80 sm:h-96">
+            <div class="">
                 <!-- efectos -->
                 <div
                     class="absolute rotate-45 -left-10 top-1/2 w-16 h-16 bg-gradient-to-br from-primary to-green-400 blur-3xl opacity-40"
