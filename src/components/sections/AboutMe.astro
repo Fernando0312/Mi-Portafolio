@@ -2,13 +2,13 @@
 import Button from "../shared/Button.astro";
 import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
-import ByNumber from "./ByNumber.astro";
+
 import Image from "astro/components/Image.astro";   
 
 
 ---
 
-<section class="relative pt-32 lg:pt-36">
+<section id="aboutMe" class="relative pt-32 lg:pt-36">
     <Container className={"flex flex-col lg:flex-row gap-10 lg:gap-12"}>
         <div class="absolute w-full lg:w-1/2 inset-y-0 lg:right-0 ">
             <span class="absolute -left-6 md:left-4 top-24 lg:top-28 w-24 h-24 rotate-90 skew-x-12 rounded-3xl bg-green-400 blur-xl opacity-60 lg:opacity-95 lg:block hidden"></span>
@@ -32,25 +32,25 @@ import Image from "astro/components/Image.astro";
         <div class="row mt-10 w-full flex max-w-md mx-auto lg:mx-0 text">
             <div class="flex sm:flex-row flex-col gap-5 w-full">
                 <!-- LinkedIn -->
-                <a href="https://www.linkedin.com" target="_blank" class="min-w-max pr-2 border-r border-box-border">
+                <a href="https://www.linkedin.com/in/fernando-urroz-orozco-69424731a/" target="_blank" class="min-w-max pr-2 border-r border-box-border">
                     <div class="relative w-20 h-20 overflow-hidden flex justify-center items-center rounded-full bg-blue-600 hover:bg-blue-500 hover:scale-110 transition-all duration-300 ease-in-out">
                         <img src="/logos/linkedin.png" alt="LinkedIn" class="object-cover w-10 h-10">
                     </div>
                 </a>
         
                 <!-- GitHub -->
-                <a href="https://www.github.com" target="_blank" class="min-w-max pr-2 border-r border-box-border">
+                <a href="https://github.com/Fernando0312" target="_blank" class="min-w-max pr-2 border-r border-box-border">
                     <div class="relative w-20 h-20 overflow-hidden flex justify-center items-center rounded-full bg-gray-800 hover:bg-gray-700 hover:scale-110 transition-all duration-300 ease-in-out">
                         <img src="/logos/github (2).png" alt="GitHub" class="object-cover w-10 h-10">
                     </div>
                 </a>
         
                 <!-- Gmail -->
-                <a href="https://www.gmail.com" target="_blank" class="min-w-max pr-2 border-r border-box-border">
+                <section id="contact" class="min-w-max pr-2 border-r border-box-border">
                     <div class="relative w-20 h-20 overflow-hidden flex justify-center items-center rounded-full bg-red-600 hover:bg-red-500 hover:scale-110 transition-all duration-300 ease-in-out">
                         <img src="/logos/gmail.png" alt="Gmail" class="object-cover w-10 h-10">
                     </div>
-                </a>
+                </section>
             </div>
         </div>
     </div>
@@ -61,6 +61,4 @@ import Image from "astro/components/Image.astro";
             <img src="/images/foto.jpg" alt="Hero image" width="1800" height="1800" class="lg:absolute lg:w-full lg:h-full rounded-full object-cover lg:max-h-none max-h-96">
         </div>
     </Container>
-
-    <ByNumber/>
 </section>

@@ -1,40 +1,46 @@
 ---
 // Tecnologias.astro
 
+
 const tecnologias = [
   {
     nombre: "Java",
-    logo: "public/images/logos/Flogo.png",
+    logo: "public/logos/java.png",
     link: "https://www.java.com"
   },
   {
     nombre: "JavaScript",
-    logo: "/images/logos/javascript.png",
+    logo: "/logos/jscript.png",
     link: "https://www.javascript.com"
   },
   {
     nombre: "HTML",
-    logo: "/images/logos/html.png",
+    logo: "/logos/html5.png",
     link: "https://developer.mozilla.org/en-US/docs/Web/HTML"
   },
   {
     nombre: "CSS",
-    logo: "/images/logos/gmail.png",
+    logo: "/logos/CSS-ICONO.png",
     link: "https://developer.mozilla.org/en-US/docs/Web/CSS"
   },
   {
     nombre: "SQL",
-    logo: "public/logos/",
+    logo: "public/logos/logosql.png",
     link: "https://www.sql.org"
   },
   {
     nombre: ".NET",
-    logo: "/images/logos/dotnet.png",
+    logo: "/logos/.net.png",
     link: "https://dotnet.microsoft.com/"
   },
   {
     nombre: "C#",
-    logo: "/images/logos/csharp.png",
+    logo: "/logos/Csharp_Logo.png",
+    link: "https://learn.microsoft.com/en-us/dotnet/csharp/"
+  },
+  {
+    nombre: "React",
+    logo: "/logos/react.png",
     link: "https://learn.microsoft.com/en-us/dotnet/csharp/"
   }
 ];
@@ -108,13 +114,13 @@ const tecnologias = [
   }
 </style>
 
-<section>
+<section id="technologies">
   <div>
-    <h2>Tecnologías que Uso</h2>
+    <h2>Technologies </h2>
 
     <div class="technologies-container">
       {tecnologias.map(tec => (
-        <div key={tec.nombre} class="tech-logo">
+        <div class="tech-logo">
           <a href={tec.link} target="_blank" rel="noopener noreferrer"></a>
           <img src={tec.logo} alt={tec.nombre} />
         </div>

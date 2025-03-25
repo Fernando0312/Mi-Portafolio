@@ -5,24 +5,28 @@ import  Navitem from "../shared/Navitem.astro";
 
 const navItems = [
     {
-        href:"#",
+        href:"#aboutMe",
         text:"Home"
     },
     {
-        href:"#services",
+        href:"#technologies",
+        text:"Technologies"
+    },
+    {
+        href:"#projects",
         text:"Projects"
     },
     {
-        href:"#about-us",
-        text:"About me"
+        href:"#academicRecord",
+        text:"Academic Record"
     },
     {
-        href:"#features",
+        href:"#Contact",
         text:"Contact"
-    },
+    }
 ]
 ---
-<header class="absolute inset-x-0 top-0 z-50 py-6">
+<header class="sticky top-0 z-50 bg-body/80 backdrop-blur-md py-4 ">
     <Container>
         <nav class="w-full flex justify-between gap-6 relative">
             <!-- logo -->
