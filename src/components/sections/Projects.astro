@@ -1,33 +1,49 @@
 ---
-// Puedes modificar este array con tus proyectos reales
 const projects = [
   {
     title: "Sistema de reservas para hotel",
-    description: "Este sistema se encarga de permitir que los clientes del hotel puedan ingreasr al sitio y ver los paquetes que ofrecen, precios y reservar.",
+    description: "Este sistema permite que los clientes vean paquetes, precios y hagan reservas.",
     repo: "https://github.com/tuusuario/task-manager",
-    image: "/public/images/image.png"
+    image: "/projects/image1.png"
   },
   {
     title: "Sistema de Biblioteca",
-    description: "Este sistema permite la gestion de libros para administradores y la vista previa de libros para los clientes incluyendo precio en dolares y colones ",
-    repo: "https://github.com/tuusuario/weather-dashboard",
-    image: "/projects/weather-dashboard.png"
+    description: "Gestión de libros para administradores y vista previa para clientes.",
+    repo: "https://github.com/tuusuario/library-system",
+    image: "/projects/image2.png"
   },
   {
     title: "Punto de ventas comercial",
-    description: "Este sistema permite la gestion de productos por parte del administrador y también la compra por parte del cliente..",
-    repo: "https://github.com/tuusuario/ecommerce-site",
-    image: "/projects/ecommerce-site.png"
+    description: "Gestión de productos y compras en línea para clientes.",
+    repo: "https://github.com/tuusuario/pos-system",
+    image: "/projects/image3.png"
+  },
+  {
+    title: "Dashboard financiero",
+    description: "Visualización de ingresos, gastos y estadísticas en tiempo real.",
+    repo: "https://github.com/tuusuario/finance-dashboard",
+    image: "/projects/image4.png"
+  },
+  {
+    title: "Red social estudiantil",
+    description: "Conexión entre estudiantes, publicaciones, mensajes y perfiles.",
+    repo: "https://github.com/tuusuario/student-network",
+    image: "/projects/image5.png"
+  },
+  {
+    title: "App de clima",
+    description: "Consulta del clima en tiempo real con interfaz moderna.",
+    repo: "https://github.com/tuusuario/weather-app",
+    image: "/projects/image6.png"
   }
 ];
 import Container from "../shared/Container.astro";
 ---
 
-<section id="projects" class="relative py-24">
-  <!-- Fondo de manchas de color sin el efecto borroso -->
-<!-- FONDOS CON BLUR Y DEGRADADO -->
-  <div class="absolute top-16 left-5 w-72 h-72 rounded-full bg-indigo-500 blur-3xl opacity-60 -rotate-[55deg] skew-y-12 "></div>
-  <div class="absolute bottom-10 right-5 w-72 h-72 rounded-full bg-green-500 blur-3xl opacity-60 rotate-[100deg] skew-x-12 "></div>
+<section id="projects" class="relative py-24 overflow-hidden">
+  <!-- Decorativos -->
+  <div class="absolute top-16 left-5 w-72 h-72 rounded-full bg-indigo-500 blur-3xl opacity-60 -rotate-[55deg] skew-y-12"></div>
+  <div class="absolute bottom-10 right-5 w-72 h-72 rounded-full bg-green-500 blur-3xl opacity-60 rotate-[100deg] skew-x-12"></div>
   <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[500px] h-[500px] bg-gradient-to-br from-green-400 to-blue-500 blur-[150px] opacity-30 z-0"></div>
 
   <Container className="relative z-10">
@@ -35,44 +51,90 @@ import Container from "../shared/Container.astro";
       My Projects
     </h2>
 
-    <div class="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      {projects.map(project => (
-        <div class="bg-box-bg border border-box-border rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 
-        flex flex-col items-center text-center transform transition-transform hover:scale-105 hover:-translate-y-2 shadow-lg hover:shadow-primary transition-shadow duration-300 space-y-6">
-          
-          <!-- Laptop mockup -->
-          <div class="relative w-full">
-            <!-- Pantalla -->
-            <div class="w-full h-52 bg-black rounded-t-xl overflow-hidden border-[6px] border-gray-800 shadow-inner">
-              <img src={project.image} alt={project.title} class="w-full h-full object-cover" />
+    <!-- Carrusel -->
+    <div class="relative">
+      <!-- Flechas -->
+      <button id="prev" class="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 p-3 rounded-full backdrop-blur-sm">
+        ⬅️
+      </button>
+      <button id="next" class="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 p-3 rounded-full backdrop-blur-sm">
+        ➡️
+      </button>
+
+      <!-- Vista -->
+      <div class="overflow-hidden">
+        <div id="carousel" class="flex transition-transform duration-500 ease-in-out gap-10">
+          {projects.map(project => (
+            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0">
+              <div class="bg-box-bg border border-box-border rounded-2xl p-6 
+                shadow-lg hover:shadow-xl hover:shadow-primary transition-transform duration-300 
+                transform hover:scale-105 hover:-translate-y-2 text-center flex flex-col items-center">
+
+                <!-- Mockup -->
+                <div class="relative w-full overflow-hidden rounded-xl">
+                  <div class="w-full h-52 bg-black overflow-hidden rounded-t-xl border-[6px] border-gray-800 shadow-inner">
+                    <img src={project.image} alt={project.title} class="w-full h-full object-cover rounded-t-xl" />
+                  </div>
+                  <div class="w-3/4 mx-auto h-2 bg-gray-700 rounded-b-lg -mt-1 relative z-10"></div>
+                  <div class="w-11/12 h-5 bg-gray-900 rounded-b-xl shadow-md mx-auto mt-1"></div>
+                </div>
+
+                <!-- Info -->
+                <h3 class="text-xl font-semibold text-heading-1 mt-4">{project.title}</h3>
+                <p class="text-heading-2 mt-2 mb-4">{project.description}</p>
+
+                <!-- GitHub -->
+                <a href={project.repo} target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:opacity-90 transition-opacity duration-200">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M12 0C5.37 0 0 5.373 0 12a12 12 0 008.205 11.432c.6.111.82-.26.82-.577v-2.17c-3.338.727-4.033-1.61-4.033-1.61-.546-1.389-1.334-1.76-1.334-1.76-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.24 1.84 1.24 1.07 1.835 2.809 1.305 3.495.998.108-.775.418-1.305.76-1.605-2.665-.305-5.467-1.332-5.467-5.932 0-1.31.47-2.38 1.236-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.45 11.45 0 013.003-.403c1.02.004 2.045.137 3.003.403 2.29-1.552 3.296-1.23 3.296-1.23.654 1.653.243 2.873.12 3.176.77.84 1.234 1.91 1.234 3.22 0 4.61-2.807 5.624-5.48 5.92.43.37.814 1.096.814 2.21v3.284c0 .32.216.694.825.576A12.002 12.002 0 0024 12c0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  View Repo
+                </a>
+              </div>
             </div>
-
-            <!-- Bisagra (opcional) -->
-            <div class="w-3/4 mx-auto h-2 bg-gray-700 rounded-b-lg -mt-1 z-10 relative"></div>
-
-            <!-- Base laptop (teclado) -->
-            <div class="w-11/12 h-5 bg-gray-900 rounded-b-xl shadow-md mx-auto mt-1"></div>
-          </div>
-
-          <!-- Info -->
-          <h3 class="text-xl font-semibold text-heading-1 mt-4 mb-2">{project.title}</h3>
-          <p class="text-heading-2 mb-4">{project.description}</p>
-          
-          <!-- Botón con icono -->
-          <a 
-            href={project.repo} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:opacity-90 transition-opacity duration-200"
-          >
-            <!-- GitHub icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5">
-              <path d="M12 0C5.37 0 0 5.373 0 12a12 12 0 008.205 11.432c.6.111.82-.26.82-.577v-2.17c-3.338.727-4.033-1.61-4.033-1.61-.546-1.389-1.334-1.76-1.334-1.76-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.24 1.84 1.24 1.07 1.835 2.809 1.305 3.495.998.108-.775.418-1.305.76-1.605-2.665-.305-5.467-1.332-5.467-5.932 0-1.31.47-2.38 1.236-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.45 11.45 0 013.003-.403c1.02.004 2.045.137 3.003.403 2.29-1.552 3.296-1.23 3.296-1.23.654 1.653.243 2.873.12 3.176.77.84 1.234 1.91 1.234 3.22 0 4.61-2.807 5.624-5.48 5.92.43.37.814 1.096.814 2.21v3.284c0 .32.216.694.825.576A12.002 12.002 0 0024 12c0-6.627-5.373-12-12-12z"/>
-            </svg>
-            View Repo
-          </a>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   </Container>
+
+  <script>
+    let current = 0;
+    const carousel = document.getElementById("carousel");
+    const prev = document.getElementById("prev");
+    const next = document.getElementById("next");
+
+    function getVisible() {
+      return window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+    }
+
+    function updateCarousel() {
+      const visible = getVisible();
+      const card = carousel.querySelector("div");
+      const cardWidth = card.offsetWidth + 40; // gap + padding
+      carousel.style.transform = `translateX(-${current * cardWidth}px)`;
+    }
+
+    next.addEventListener("click", () => {
+      const max = carousel.children.length - getVisible();
+      if (current < max) {
+        current++;
+        updateCarousel();
+      }
+    });
+
+    prev.addEventListener("click", () => {
+      if (current > 0) {
+        current--;
+        updateCarousel();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      updateCarousel();
+    });
+
+    updateCarousel();
+  </script>
 </section>
