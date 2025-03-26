@@ -1,6 +1,6 @@
-<h1>AgenceX Landing page</h1>
+<h1>Portafolio Fernando Urroz</h1>
 
-A simple landing page for a digital agency
+A simple landing page for a digital portafolio
 
 ![AgenceX light Theme](./screens/demoLight.webp)
 ![AgenceX Dark Theme](./screens/demoDark.webp)
@@ -35,19 +35,4 @@ Inside of your Astro project, you'll see the following folders and files:
 ├── package.json
 └── tailwind.config.cjs
 ```
-
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Installs dependencies                            |
-| `npm run dev`          | Starts local dev server at `localhost:4321`      |
-| `npm run build`        | Build your production site to `./dist/`          |
-| `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro --help` | Get help using the Astro CLI                     |
-
 
