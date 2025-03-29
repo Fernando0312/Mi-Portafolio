@@ -2,63 +2,98 @@
 import Button from "../shared/Button.astro";
 import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
-
-import Image from "astro/components/Image.astro";   
-
-
 ---
 
 <section id="aboutMe" class="relative pt-32 lg:pt-36">
     <Container className={"flex flex-col lg:flex-row gap-10 lg:gap-12"}>
-        <div class="absolute w-full lg:w-1/2 inset-y-0 lg:right-0 ">
-            <span class="absolute -left-6 md:left-4 top-24 lg:top-28 w-24 h-24 rotate-90 skew-x-12 rounded-3xl bg-green-400 blur-xl opacity-60 lg:opacity-95 lg:block hidden"></span>
-            <span class="absolute right-4 bottom-12 w-24 h-24 rounded-3xl bg-primary blur-xl opacity-80"></span>
+        <div class="absolute w-full lg:w-1/2 inset-y-0 lg:right-0">
+            <span
+                class="absolute -left-6 md:left-4 top-24 lg:top-28 w-24 h-24 rotate-90 skew-x-12 rounded-3xl bg-green-400 blur-xl opacity-60 lg:opacity-95 lg:block hidden"
+            ></span>
+            <span
+                class="absolute right-4 bottom-12 w-24 h-24 rounded-3xl bg-primary blur-xl opacity-80"
+            ></span>
         </div>
-        <span class="w-4/12 lg:w-2/12 aspect-square bg-gradient-to-tr from-primary to-green-400 absolute -top-5 lg:left-0 rounded-full skew-y-12 blur-2xl opacity-40 skew-x-12 rotate-90"></span>
-        <div class="relative flex flex-col items-center text-center lg:text-left lg:py-7 xl:py-8 
-        lg:items-start lg:max-w-none max-w-3xl mx-auto lg:mx-0 lg:flex-1 lg:w-1/2">
-            
-            <h1 class="text-3xl/tight sm:text-4xl/tight md:text-5xl/tight xl:text-6xl/tight
-             font-bold text-heading-1">
-             Hi I'm  <span class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-20% via-primary via-30% to-green-600">Fernando Urroz!</span> 👋.
+        <span
+            class="w-4/12 lg:w-2/12 aspect-square bg-gradient-to-tr from-primary to-green-400 absolute -top-5 lg:left-0 rounded-full skew-y-12 blur-2xl opacity-40 skew-x-12 rotate-90"
+        ></span>
+        <div
+            class="relative flex flex-col items-center text-center lg:text-left lg:py-7 xl:py-8
+        lg:items-start lg:max-w-none max-w-3xl mx-auto lg:mx-0 lg:flex-1 lg:w-1/2"
+        >
+        <div class="flex justify-center w-full">
+            <h1
+              class="text-center text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-heading-1"
+            >
+              Hi I'm <span
+                class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-20% via-primary via-30% to-green-600"
+              >Fernando Urroz!</span> 👋.
             </h1>
+          </div>
+          <div class="felx justify-center w-full">
             <Paragraph className="mt-8">
-                I'm a Business Informatics student with skills in application development and programming. I'm passionate about learning new technologies and creating 
-                innovative solutions. I'm looking to apply my knowledge to contribute to high-impact technology projects.
+                I'm a Business Informatics student with skills in application
+                development and programming. I'm passionate about learning new
+                technologies and creating innovative solutions. I'm looking to
+                apply my knowledge to contribute to high-impact technology
+                projects.
             </Paragraph>
+        </div>
 
-            <div class="row mt-10 w-full flex max-w-md mx-auto lg:mx-0 text">
-    <div class="flex sm:flex-row flex-col gap-5 w-full">
-        <div class="row mt-10 w-full flex max-w-md mx-auto lg:mx-0 text">
-            <div class="flex sm:flex-row flex-col gap-5 w-full">
+        <div class="row mt-10 w-full flex justify-center mx-auto text">
+            <div class="flex sm:flex-row flex-col gap-5 w-full justify-center">
                 <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/fernando-urroz-orozco-69424731a/" target="_blank" class="min-w-max pr-2 border-r border-box-border">
-                    <div class="relative w-20 h-20 overflow-hidden flex justify-center items-center rounded-full bg-[#93C5FD] hover:bg-[#60A5FA] hover:scale-110 transition-all duration-300 ease-in-out">
-                        <img src="/logos/logolinkedin.png" alt="LinkedIn" class="object-cover w-12 h-12">
+                <a
+                    href="https://www.linkedin.com/in/fernando-urroz-orozco-69424731a/"
+                    target="_blank"
+                    class="min-w-max pr-2 border-r border-box-border"
+                >
+                    <div
+                        class="relative w-20 h-20 overflow-hidden flex justify-center items-center rounded-full bg-[#93C5FD] hover:bg-[#60A5FA] hover:scale-110 transition-all duration-300 ease-in-out"
+                    >
+                        <img
+                            src="/logos/logolinkedin.png"
+                            alt="LinkedIn"
+                            class="object-cover w-12 h-12"
+                        />
                     </div>
                 </a>
         
                 <!-- GitHub -->
-                <a href="https://github.com/Fernando0312" target="_blank" class="min-w-max pr-2 border-r border-box-border">
-                    <div class="relative w-20 h-20 overflow-hidden flex justify-center items-center rounded-full bg-[#D1D5DB] hover:bg-[#9CA3AF] hover:scale-110 transition-all duration-300 ease-in-out">
-                        <img src="/logos/lgit.png" alt="GitHub" class="object-cover w-12 h-12">
+                <a
+                    href="https://github.com/Fernando0312"
+                    target="_blank"
+                    class="min-w-max pr-2 border-r border-box-border"
+                >
+                    <div
+                        class="relative w-20 h-20 overflow-hidden flex justify-center items-center rounded-full bg-[#D1D5DB] hover:bg-[#9CA3AF] hover:scale-110 transition-all duration-300 ease-in-out"
+                    >
+                        <img
+                            src="/logos/lgit.png"
+                            alt="GitHub"
+                            class="object-cover w-12 h-12"
+                        />
                     </div>
                 </a>
         
                 <!-- Gmail -->
-                <a href="#Contact" class="min-w-max pr-2 border-r border-box-border">
-                    <div class="relative w-20 h-20 overflow-hidden flex justify-center items-center rounded-full bg-[#F8D7D2] hover:bg-[#F5A6A1] hover:scale-110 transition-all duration-300 ease-in-out">
-                         <img src="/logos/gmail.png" alt="Gmail" class="object-cover w-10 h-10">
+                <a
+                    href="#Contact"
+                    class="min-w-max pr-2 border-r border-box-border"
+                >
+                    <div
+                        class="relative w-20 h-20 overflow-hidden flex justify-center items-center rounded-full bg-[#F8D7D2] hover:bg-[#F5A6A1] hover:scale-110 transition-all duration-300 ease-in-out"
+                    >
+                        <img
+                            src="/logos/gmail.png"
+                            alt="Gmail"
+                            class="object-cover w-10 h-10"
+                        />
                     </div>
                 </a>
             </div>
         </div>
-    </div>
-</div>
-        </div>
-
-        <div class="flex flex-1 lg:w-1/2 lg:h-auto relative lg:max-w-none lg:mx-0 mx-auto max-w-3xl">
-            <img src="/images/foto.jpg" alt="Hero image" width="1800" height="1800" class="lg:absolute lg:w-full lg:h-full rounded-full object-cover lg:max-h-none max-h-96">
+        
         </div>
     </Container>
 </section>
