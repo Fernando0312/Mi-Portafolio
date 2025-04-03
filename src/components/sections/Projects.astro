@@ -41,40 +41,62 @@ const projects = [
   }
 ];
 ---
-
 <section id="projects" class="relative py-24 overflow-visible">
-  <Container className="relative z-10 overflow-hidden">
+  <!-- Figuras decorativas -->
+  <div class="absolute left-[90%] transform -translate-x-1/2 top-0 pointer-events-none">
+    <div class="w-32 h-32 flex rounded-xl relative blur-2xl">
+      <span class="absolute w-16 h-16 top-2 left-2 bg-yellow-400 rounded-md rotate-45"></span>
+      <span class="absolute w-16 h-16 bottom-2 right-2 bg-green-500 rounded-md rotate-45"></span>
+      <span class="absolute w-16 h-16 bottom-2 left-2 bg-blue-500 rounded-md rotate-45"></span>
+    </div>
+  </div>
+
+  <div class="absolute left-0 top-1/3 pointer-events-none">
+    <div class="w-28 h-28 flex rounded-xl relative blur-2xl">
+      <span class="absolute w-16 h-16 top-2 right-2 bg-purple-500 rounded-md rotate-45"></span>
+      <span class="absolute w-16 h-16 bottom-2 left-2 bg-red-400 rounded-md rotate-45"></span>
+    </div>
+  </div>
+
+  <div class="absolute right-0 bottom-5 pointer-events-none">
+    <div class="w-28 h-28 flex rounded-xl relative blur-2xl">
+      <span class="absolute w-16 h-16 top-2 right-2 bg-pink-500 rounded-md rotate-45"></span>
+      <span class="absolute w-16 h-16 bottom-2 left-2 bg-teal-400 rounded-md rotate-45"></span>
+    </div>
+  </div>
+
+  <Container className="relative z-10 overflow-visible">
     <h2 class="text-3xl lg:text-4xl font-bold text-heading-1 text-center mb-10">
       My Projects
     </h2>
 
-    <!-- Carrusel con scroll horizontal -->
-    <div class="relative overflow-hidden">
-      <div id="carousel-container" class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar">
-        {projects.map(project => (
-          <div class="flex-shrink-0 w-80 md:w-96 snap-center">
-            <div class="bg-box-bg border border-box-border rounded-2xl p-6 
-              shadow-lg hover:shadow-xl hover:shadow-primary transition-transform duration-300 
-              transform hover:scale-105 hover:-translate-y-2 text-center flex flex-col items-center relative z-10 overflow-visible min-h-[420px]">
-              
-              <div class="relative w-full overflow-visible rounded-xl">
-                <div class="w-full aspect-[16/9] bg-black overflow-visible rounded-t-xl border-[6px] border-gray-800 shadow-inner flex items-center justify-center">
-                  <img src={project.image} alt={project.title} class="w-full h-full object-cover rounded-t-xl transition-transform duration-300 hover:scale-105 transform-origin-center" />
-                </div>
-                <div class="w-3/4 mx-auto h-2 bg-gray-700 rounded-b-lg -mt-1 relative z-10"></div>
-                <div class="w-11/12 h-5 bg-gray-900 rounded-b-xl shadow-md mx-auto mt-1"></div>
-              </div>
+    <!-- Contenedor con desplazamiento horizontal para las tarjetas -->
+    <div class="flex justify-center gap-6 overflow-x-auto px-4 py-4 w-full no-scrollbar">
+      {projects.slice(0, 3).map(project => (
+        <div class="flex-shrink-0 w-72 md:w-[350px] lg:w-[380px] snap-center">
+          <div class="relative bg-box-bg border border-box-border rounded-2xl p-5 
+            shadow-lg hover:shadow-xl hover:shadow-[0px_6px_20px_rgba(0,255,255,0.2)] transition-all duration-300 
+            transform hover:scale-105 hover:-translate-y-2 text-center flex flex-col items-center 
+            min-h-[400px]">
 
-              <h3 class="text-xl font-semibold text-heading-1 mt-4">{project.title}</h3>
-              <p class="text-heading-2 mt-2 mb-4">{project.description}</p>
-              <a href={project.repo} target="_blank" rel="noopener noreferrer"
-                class="inline-flex items-center px-6 py-2 bg-green-600 text-white font-semibold rounded-md hover:bg-blue-500 transition duration-300">
-                View Repo
-              </a>
+            <div class="relative w-full h-[250px] overflow-hidden rounded-xl">
+              <div class="w-full h-full bg-black rounded-t-xl border-[4px] border-gray-800 shadow-inner flex items-center justify-center">
+                <img src={project.image} alt={project.title} 
+                  class="w-full h-full object-cover transition-all duration-300 transform hover:scale-105" />
+              </div>
+              <div class="w-3/4 mx-auto h-2 bg-gray-700 rounded-b-lg -mt-1 relative z-10"></div>
+              <div class="w-11/12 h-5 bg-gray-900 rounded-b-xl shadow-md mx-auto mt-1"></div>
             </div>
+
+            <h3 class="text-lg font-semibold text-heading-1 mt-4">{project.title}</h3>
+            <p class="text-sm text-heading-2 mt-2 mb-4">{project.description}</p>
+            <a href={project.repo} target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center px-5 py-2 bg-green-600 text-white font-semibold rounded-md hover:bg-blue-500 transition duration-300">
+              View Repo
+            </a>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   </Container>
 </section>
@@ -87,33 +109,24 @@ const projects = [
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  /* Ajustar el overflow en las tarjetas */
+  .overflow-visible {
+    overflow: visible !important;
+  }
+
+  /* Efecto hover más sutil para la imagen */
+  .transform:hover {
+    transform: scale(1.03) translateY(-2px); /* Menor escala y desplazamiento */
+  }
+
+  /* Sombra más sutil en hover para la tarjeta */
+  .shadow-xl {
+    box-shadow: 0px 6px 20px rgba(0, 255, 255, 0.2); /* Efecto de iluminación suave */
+  }
+
+  /* Transición de la sombra para hacer el resplandor más sutil */
+  .hover\:shadow-xl:hover {
+    box-shadow: 0px 6px 20px rgba(0, 255, 255, 0.3); /* Aumenta ligeramente la intensidad */
+  }
 </style>
-
-<script>
-  const carousel = document.getElementById('carousel-container');
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  carousel.addEventListener('mousedown', (e) => {
-    isDown = true;
-    startX = e.pageX - carousel.offsetLeft;
-    scrollLeft = carousel.scrollLeft;
-  });
-
-  carousel.addEventListener('mouseleave', () => {
-    isDown = false;
-  });
-
-  carousel.addEventListener('mouseup', () => {
-    isDown = false;
-  });
-
-  carousel.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - carousel.offsetLeft;
-    const walk = (x - startX) * 2; // Velocidad del scroll
-    carousel.scrollLeft = scrollLeft - walk;
-  });
-</script>
